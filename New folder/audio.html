@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Play Sound</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f0f0f0;
+      margin: 0;
+    }
+
+    button {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      border: none;
+      background-color: #4CAF50;
+      color: white;
+      font-size: 24px;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      transition: background-color 0.3s, transform 0.2s;
+    }
+
+    button:hover {
+      background-color: #45a049;
+      transform: scale(1.05);
+    }
+
+    audio {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <button onclick="playSound()">▶ Play Sound</button>
+  <audio id="myAudio" src="Voicy_Loud Moaning.mp3"></audio>
+
+  <script>
+    function playSound() {
+      const audio = document.getElementById('myAudio');
+      audio.volume = 1.0;
+      audio.play().catch(error => {
+        console.error("Playback failed:", error);
+      });
+    }
+  </script>
+</body>
+</html>
